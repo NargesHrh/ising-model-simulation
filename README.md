@@ -1,6 +1,6 @@
 # 2D Ising Model Simulation
 
-This project simulates a 2D Ising model using the Monte Carlo Metropolis algorithm. It includes options for both local interactions (using the Metropolis algorithm) and non-local interactions (using mean-field theory with the Hubbard-Stratonovich transformation). The simulation allows users to set custom lattice sizes, temperatures, and step counts, and it saves configuration snapshots and plots in a specified directory.
+This project simulates a 2D Ising model using the Monte Carlo Metropolis algorithm. It includes local interactions (using the Metropolis algorithm). The simulation allows users to set custom lattice sizes, temperatures, and step counts, and it saves configuration snapshots and plots in a specified directory.
 
 ## Project Structure
 
@@ -10,7 +10,6 @@ ising-model-simulation
     ├── simulation/
         ├── __init__.py                 # Initializes the package
         ├── local_interaction.py        # Simulates local interactions using the Metropolis algorithm
-        ├── non_local_interaction.py    # Simulates non-local interactions with mean-field theory
         ├── metropolis.py               # Contains the Monte Carlo step and Metropolis algorithm functions
         ├── plotter.py                  # Handles plotting and saving plots as .png files
         └── utils.py                    # Utility functions like energy calculation
@@ -20,7 +19,6 @@ ising-model-simulation
 * ising.model.py : The main script that prompts the user to input lattice size, temperature, and number of steps. It initializes the simulation, captures snapshots, and saves plots.
 
 * `simulation/local_interaction.py`: Contains the local interaction simulation function (`local_interaction_simulation`), which initializes the lattice and runs the Metropolis algorithm for the specified number of steps.
-* `simulation/non_local_interaction.py`: Implements a non-local interaction simulation using mean-field theory and the Hubbard-Stratonovich transformation to approximate the behavior of magnetization over temperature.
 * `simulation/metropolis.py`:
   * `monte_carlo_step`: A single Monte Carlo step that decides whether to flip a spin based on the Metropolis criterion.
   * `run_metropolis`: Runs the entire Metropolis algorithm, calling `monte_carlo_step` for each spin and capturing snapshots at specified intervals.
